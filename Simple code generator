@@ -16,7 +16,7 @@ int main()
         scanf("%s", icode[i]);
     } while (strcmp(icode[i++], "exit") != 0);
     printf("\nTarget code generation");
-    printf("\n*******");
+    printf("\n***");
     i = 0;
     do
     {
@@ -37,10 +37,9 @@ int main()
             break;
         }
 
-        printf("\n\tMov %c,R%d", str[2], i);
-        printf("\n\%s%c,,R%d", opr, str[4], i);
-        printf("\n\tMov R%d%c", i, str[0]);
+        printf("\nMov R%d,%c", i, str[2]);
+        printf("\n\%s R%d,%c", opr, i ,str[4]);
+        printf("\nMov R%d,%c", i, str[0]);
     } while (strcmp(icode[++i], "exit") != 0);
     return 0;
 }
-
